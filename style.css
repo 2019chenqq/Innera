@@ -1003,7 +1003,6 @@ footer .copyright-symbol {
   .about-section p,
   .contact-section p,
   .feature-group p,
-  .feature-card p,
   .form-help,
   .form-note {
     font-size: 15px;
@@ -1012,6 +1011,11 @@ footer .copyright-symbol {
     max-width: 34ch;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .feature-card p {
+    text-align: center;
+    max-width: none;
   }
 
   .feature-group h2,
