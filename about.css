@@ -202,62 +202,67 @@
   font-size: 18px;
 }
 
-.timeline {
+.about-timeline .timeline-list {
   position: relative;
   max-width: 980px;
   margin: 0 auto;
+  display: block;
 }
 
-.timeline::before {
+.about-timeline .timeline-list::before {
   content: "";
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 50%;
   width: 3px;
-  height: 100%;
   background: linear-gradient(180deg, #9bd7f5, #5bbfd3);
   transform: translateX(-50%);
   border-radius: 999px;
 }
 
-.timeline-item {
+.about-timeline .timeline-item {
   position: relative;
   width: 50%;
   padding: 0 48px 60px;
+  margin: 0;
+  display: block;
 }
 
-.timeline-item:nth-child(odd) {
+.about-timeline .timeline-item:nth-child(odd) {
   left: 0;
   text-align: right;
 }
 
-.timeline-item:nth-child(even) {
+.about-timeline .timeline-item:nth-child(even) {
   left: 50%;
   text-align: left;
 }
 
-.timeline-item::before {
+.about-timeline .timeline-item::before {
   content: "";
   position: absolute;
   top: 8px;
+  left: 0;
   width: 18px;
   height: 18px;
   background: #5bbfd3;
   border: 6px solid #dff6ff;
   border-radius: 50%;
   box-shadow: 0 0 0 6px rgba(91, 191, 211, 0.14);
+  transform: translateX(-50%);
   z-index: 2;
 }
 
-.timeline-item:nth-child(odd)::before {
-  right: -15px;
+.about-timeline .timeline-item:nth-child(odd)::before {
+  left: 100%;
 }
 
-.timeline-item:nth-child(even)::before {
-  left: -15px;
+.about-timeline .timeline-item:nth-child(even)::before {
+  left: 0;
 }
 
-.timeline-date {
+.about-timeline .timeline-date {
   display: inline-block;
   margin-bottom: 12px;
   color: #1b6f86;
@@ -265,7 +270,7 @@
   font-size: 16px;
 }
 
-.timeline-card {
+.about-timeline .timeline-card {
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(155, 215, 245, 0.8);
   border-radius: 24px;
@@ -274,18 +279,18 @@
   transition: 0.3s ease;
 }
 
-.timeline-card:hover {
+.about-timeline .timeline-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 26px 60px rgba(80, 160, 180, 0.2);
 }
 
-.timeline-card h3 {
+.about-timeline .timeline-card h3 {
   margin: 0 0 10px;
   color: #0b143f;
   font-size: 22px;
 }
 
-.timeline-card p {
+.about-timeline .timeline-card p {
   margin: 0;
   color: #5f747b;
   font-size: 16px;
@@ -353,24 +358,26 @@
     line-height: 1.82;
   }
 
-  .timeline::before {
+  .about-timeline .timeline-list::before {
     left: 18px;
+    transform: none;
   }
 
-  .timeline-item,
-  .timeline-item:nth-child(even),
-  .timeline-item:nth-child(odd) {
+  .about-timeline .timeline-item,
+  .about-timeline .timeline-item:nth-child(even),
+  .about-timeline .timeline-item:nth-child(odd) {
     width: 100%;
     left: 0;
     text-align: left;
     padding: 0 0 46px 52px;
   }
 
-  .timeline-item::before,
-  .timeline-item:nth-child(even)::before,
-  .timeline-item:nth-child(odd)::before {
+  .about-timeline .timeline-item::before,
+  .about-timeline .timeline-item:nth-child(even)::before,
+  .about-timeline .timeline-item:nth-child(odd)::before {
     left: 3px;
     right: auto;
+    transform: none;
   }
 
   .timeline-header h2 {
