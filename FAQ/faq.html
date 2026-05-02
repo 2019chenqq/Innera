@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常見問題 FAQ | 心域 Innera</title>
+  <meta name="description" content="情緒趨勢圖 QA：了解趨勢線斷線、空心點、資料不足提示與移動平均的顯示邏輯。">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .faq-page,
+    .faq-page h2,
+    .faq-page h3,
+    .faq-page p,
+    .faq-page li {
+      font-family: "Inter", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    .faq-page {
+      padding-top: 120px;
+      background: linear-gradient(180deg, #eefaff 0%, #f8fdff 100%);
+      min-height: 100vh;
+    }
+
+    .faq-wrap {
+      width: min(980px, 92%);
+      margin: 0 auto 72px;
+    }
+
+    .faq-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .faq-category-card {
+      display: block;
+      text-decoration: none;
+      background: #ffffff;
+      border: 1px solid rgba(120, 180, 210, 0.35);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(35, 80, 105, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .faq-category-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(35, 80, 105, 0.12);
+    }
+
+    .faq-category-card h3 {
+      margin: 0 0 8px;
+      color: #14344d;
+      font-size: 20px;
+    }
+
+    .faq-category-card p {
+      margin: 0;
+      color: #27465c;
+      line-height: 1.7;
+    }
+
+    .faq-hero {
+      margin-bottom: 28px;
+    }
+
+    .faq-kicker {
+      margin: 0;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #4e7a93;
+      font-weight: 700;
+    }
+
+    .faq-hero h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      color: #0b143f;
+    }
+
+    .faq-hero p {
+      margin: 0;
+      color: #325166;
+      max-width: 760px;
+    }
+
+    @media (max-width: 768px) {
+      .faq-page {
+        padding-top: 104px;
+      }
+
+      .faq-category-card {
+        border-radius: 14px;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo-area" href="../index.html" aria-label="回到首頁">
+      <img src="../images/logo.jpg" class="logo" alt="心域 Logo">
+      <div class="brand-text">
+        <div class="brand-title">
+          <h1>心域</h1>
+          <span>INNERA</span>
+        </div>
+      </div>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="primary-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="primary-nav">
+      <div class="nav-item has-submenu">
+        <a href="../about/about.html">關於我們</a>
+        <button class="submenu-toggle" type="button" aria-label="展開關於我們子選單" aria-expanded="false">▾</button>
+        <div class="submenu">
+          <a href="../about/about.html#about-motivation">開發動機</a>
+          <a href="../about/about.html#about-expectation">我們期許</a>
+          <a href="../about/about.html#about-social">社會議題</a>
+          <a href="../about/about.html#about-timeline">發展時間線</a>
+          <a href="../about/about.html#about-roadmap">未來規劃</a>
+        </div>
+      </div>
+      <a href="../index.html#feature-intro">功能介紹</a>
+      <a href="../index.html#contact-us">聯繫我們</a>
+      <div class="nav-item has-submenu">
+        <a href="faq.html">常見問題</a>
+        <button class="submenu-toggle" type="button" aria-label="展開常見問題子選單" aria-expanded="false">▾</button>
+        <div class="submenu">
+          <a href="faq-emotion-trend.html">情緒趨勢圖</a>
+          <a href="faq-diary.html">日記功能</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="faq-page">
+    <section class="faq-wrap">
+      <header class="faq-hero">
+        <p class="faq-kicker">FAQ</p>
+        <h2>常見問題分類</h2>
+        <p>先從你想了解的功能分類進入，之後會持續新增更多主題頁面。</p>
+      </header>
+
+      <section class="faq-category-grid" aria-label="FAQ 分類清單">
+        <a class="faq-category-card" href="faq-emotion-trend.html">
+          <h3>情緒趨勢圖</h3>
+          <p>包含趨勢線斷線、空心點、資料不足提示、7 日移動平均等常見問題說明。</p>
+        </a>
+        <a class="faq-category-card" href="faq-diary.html">
+          <h3>日記功能</h3>
+          <p>包含隱私安全、儲存同步、撰寫規則與 AI 回饋機制等常見問題說明。</p>
+        </a>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>copyright © 2026 心域 Innera All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const navbar = document.querySelector(".navbar");
+      const navToggle = document.querySelector(".nav-toggle");
+      const primaryNav = document.getElementById("primary-nav");
+      const submenuItems = primaryNav ? Array.from(primaryNav.querySelectorAll(".has-submenu")) : [];
+
+      function closeMobileNav() {
+        if (!navbar || !navToggle) {
+          return;
+        }
+
+        navbar.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+
+        submenuItems.forEach((item) => {
+          item.classList.remove("submenu-open");
+          const toggle = item.querySelector(".submenu-toggle");
+          if (toggle) {
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      if (!navbar || !navToggle || !primaryNav) {
+        return;
+      }
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = navbar.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      primaryNav.querySelectorAll("a").forEach((anchor) => {
+        anchor.addEventListener("click", () => {
+          if (window.matchMedia("(max-width: 768px)").matches) {
+            closeMobileNav();
+          }
+        });
+      });
+
+      submenuItems.forEach((item) => {
+        const toggle = item.querySelector(".submenu-toggle");
+        if (!toggle) {
+          return;
+        }
+
+        toggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          const isSubmenuOpen = item.classList.toggle("submenu-open");
+          toggle.setAttribute("aria-expanded", String(isSubmenuOpen));
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          closeMobileNav();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

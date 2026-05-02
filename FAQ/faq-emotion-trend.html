@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>情緒趨勢圖 QA | 心域 Innera</title>
+  <meta name="description" content="情緒趨勢圖 QA（網站版）：了解趨勢線斷線、空心點、資料不足提示與移動平均的顯示邏輯。">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .faq-page,
+    .faq-page h2,
+    .faq-page h3,
+    .faq-page p,
+    .faq-page li {
+      font-family: "Inter", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    .faq-page {
+      padding-top: 120px;
+      background: linear-gradient(180deg, #eefaff 0%, #f8fdff 100%);
+      min-height: 100vh;
+    }
+
+    .faq-wrap {
+      width: min(980px, 92%);
+      margin: 0 auto 72px;
+    }
+
+    .faq-hero {
+      margin-bottom: 28px;
+    }
+
+    .faq-kicker {
+      margin: 0;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #4e7a93;
+      font-weight: 700;
+    }
+
+    .faq-hero h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      color: #0b143f;
+    }
+
+    .faq-hero p {
+      margin: 0;
+      color: #325166;
+      max-width: 760px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid rgba(120, 180, 210, 0.35);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 8px 20px rgba(35, 80, 105, 0.08);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 8px;
+      color: #14344d;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: #27465c;
+    }
+
+    .faq-item ul {
+      margin: 6px 0 0;
+      padding-left: 1.2em;
+      color: #27465c;
+    }
+
+    @media (max-width: 768px) {
+      .faq-page {
+        padding-top: 104px;
+      }
+
+      .faq-item {
+        border-radius: 14px;
+        padding: 15px;
+      }
+
+      .faq-item h3 {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo-area" href="../index.html" aria-label="回到首頁">
+      <img src="../images/logo.jpg" class="logo" alt="心域 Logo">
+      <div class="brand-text">
+        <div class="brand-title">
+          <h1>心域</h1>
+          <span>INNERA</span>
+        </div>
+      </div>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="primary-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="primary-nav">
+      <div class="nav-item has-submenu">
+        <a href="../about/about.html">關於我們</a>
+        <button class="submenu-toggle" type="button" aria-label="展開關於我們子選單" aria-expanded="false">▾</button>
+        <div class="submenu">
+          <a href="../about/about.html#about-motivation">開發動機</a>
+          <a href="../about/about.html#about-expectation">我們期許</a>
+          <a href="../about/about.html#about-social">社會議題</a>
+          <a href="../about/about.html#about-timeline">發展時間線</a>
+          <a href="../about/about.html#about-roadmap">未來規劃</a>
+        </div>
+      </div>
+      <a href="../index.html#feature-intro">功能介紹</a>
+      <a href="../index.html#contact-us">聯繫我們</a>
+      <div class="nav-item has-submenu">
+        <a href="faq.html">常見問題</a>
+        <button class="submenu-toggle" type="button" aria-label="展開常見問題子選單" aria-expanded="false">▾</button>
+        <div class="submenu">
+          <a href="faq-emotion-trend.html">情緒趨勢圖</a>
+          <a href="faq-diary.html">日記功能</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="faq-page">
+    <section class="faq-wrap">
+      <header class="faq-hero">
+        <p class="faq-kicker">FAQ / 情緒趨勢圖</p>
+        <h2>情緒趨勢圖 QA</h2>
+        <p>以下整理趨勢圖常見顯示邏輯與判讀方式，幫助你更清楚理解圖表資訊。</p>
+      </header>
+
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>Q1：為什麼我的趨勢線有時候會斷掉？</h3>
+          <p>A：線段中間斷開，通常代表那幾天沒有可用情緒紀錄。系統不會把缺漏資料自動補成 0 分，所以會用「斷線或虛線」提醒你：這段不是完整連續資料。</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q2：為什麼有些點是空心的？</h3>
+          <p>A：空心點表示該點是「資料較少時的參考值」。例如在 7 日移動平均中，視窗內有紀錄但天數不足，系統會保留這個點作為提示，但不把它當成高可信度的完整趨勢點。</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q3：沒有填寫的那天，系統會當成 0 分嗎？</h3>
+          <p>A：不會。沒有資料就是「空值」，不是低分。這樣可以避免把「沒記錄」誤判成「情緒很差」。</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q4：為什麼有時候只看到點，沒有看到趨勢線？</h3>
+          <p>A：當連續資料天數不足時，系統會只顯示單點，而不強行連成曲線。這是為了避免用太少的資料畫出可能誤導的趨勢。</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q5：7 天、30 天、全部，看到的線為什麼不一樣？</h3>
+          <p>A：</p>
+          <ul>
+            <li>7 天：以每日原始值為主，能看到短期波動。</li>
+            <li>30 天／全部：使用 7 日移動平均，讓中長期趨勢更穩定、更容易閱讀。</li>
+          </ul>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q6：圖上的粉紅背景是什麼？</h3>
+          <p>A：粉紅區塊代表生理期區間，用來幫助你觀察情緒變化是否與生理週期有時間上的重疊。</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q7：如果某段時間完全沒資料，會怎麼顯示？</h3>
+          <p>A：系統會顯示「資料不足，無法顯示趨勢圖」等提示，而不是畫出不準確的線。</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q8：為什麼有時候線看起來跳很大？</h3>
+          <p>A：可能是中間有缺漏日，或該時段紀錄密度不均。建議搭配日期與虛線提示一起看，能更準確理解變化原因。</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q9：我要怎麼讓圖表更有參考價值？</h3>
+          <p>A：穩定記錄比一次記很多更有幫助。即使每天只填 1-2 個重點，連續 2-4 週後，趨勢就會明顯、判讀也更準確。</p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Q10：這張圖可以拿來做醫療診斷嗎？</h3>
+          <p>A：不能。這張圖是自我觀察工具，不是診斷結果。若你長期感到明顯困擾，建議尋求專業醫療或心理協助。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>copyright © 2026 心域 Innera All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const navbar = document.querySelector(".navbar");
+      const navToggle = document.querySelector(".nav-toggle");
+      const primaryNav = document.getElementById("primary-nav");
+      const submenuItems = primaryNav ? Array.from(primaryNav.querySelectorAll(".has-submenu")) : [];
+
+      function closeMobileNav() {
+        if (!navbar || !navToggle) {
+          return;
+        }
+
+        navbar.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+
+        submenuItems.forEach((item) => {
+          item.classList.remove("submenu-open");
+          const toggle = item.querySelector(".submenu-toggle");
+          if (toggle) {
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      if (!navbar || !navToggle || !primaryNav) {
+        return;
+      }
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = navbar.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      primaryNav.querySelectorAll("a").forEach((anchor) => {
+        anchor.addEventListener("click", () => {
+          if (window.matchMedia("(max-width: 768px)").matches) {
+            closeMobileNav();
+          }
+        });
+      });
+
+      submenuItems.forEach((item) => {
+        const toggle = item.querySelector(".submenu-toggle");
+        if (!toggle) {
+          return;
+        }
+
+        toggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          const isSubmenuOpen = item.classList.toggle("submenu-open");
+          toggle.setAttribute("aria-expanded", String(isSubmenuOpen));
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          closeMobileNav();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

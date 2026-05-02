@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日記功能 QA | 心域 Innera</title>
+  <meta name="description" content="日記功能 QA（網站版）：隱私安全、儲存同步、撰寫規則與 AI 回饋機制常見問題。">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .faq-page,
+    .faq-page h2,
+    .faq-page h3,
+    .faq-page p,
+    .faq-page li {
+      font-family: "Inter", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    .faq-page {
+      padding-top: 120px;
+      background: linear-gradient(180deg, #eefaff 0%, #f8fdff 100%);
+      min-height: 100vh;
+    }
+
+    .faq-wrap {
+      width: min(980px, 92%);
+      margin: 0 auto 72px;
+    }
+
+    .faq-hero {
+      margin-bottom: 28px;
+    }
+
+    .faq-kicker {
+      margin: 0;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #4e7a93;
+      font-weight: 700;
+    }
+
+    .faq-hero h2 {
+      margin: 8px 0 10px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      color: #0b143f;
+    }
+
+    .faq-hero p {
+      margin: 0;
+      color: #325166;
+      max-width: 760px;
+    }
+
+    .faq-section {
+      margin-top: 28px;
+    }
+
+    .faq-section h3 {
+      margin: 0 0 12px;
+      color: #123950;
+      font-size: 24px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid rgba(120, 180, 210, 0.35);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 8px 20px rgba(35, 80, 105, 0.08);
+    }
+
+    .faq-item h4 {
+      margin: 0 0 8px;
+      color: #14344d;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: #27465c;
+    }
+
+    .faq-item ul,
+    .faq-item ol {
+      margin: 8px 0 0;
+      padding-left: 1.2em;
+      color: #27465c;
+    }
+
+    @media (max-width: 768px) {
+      .faq-page {
+        padding-top: 104px;
+      }
+
+      .faq-section h3 {
+        font-size: 21px;
+      }
+
+      .faq-item {
+        border-radius: 14px;
+        padding: 15px;
+      }
+
+      .faq-item h4 {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo-area" href="../index.html" aria-label="回到首頁">
+      <img src="../images/logo.jpg" class="logo" alt="心域 Logo">
+      <div class="brand-text">
+        <div class="brand-title">
+          <h1>心域</h1>
+          <span>INNERA</span>
+        </div>
+      </div>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="primary-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="primary-nav">
+      <div class="nav-item has-submenu">
+        <a href="../about/about.html">關於我們</a>
+        <button class="submenu-toggle" type="button" aria-label="展開關於我們子選單" aria-expanded="false">▾</button>
+        <div class="submenu">
+          <a href="../about/about.html#about-motivation">開發動機</a>
+          <a href="../about/about.html#about-expectation">我們期許</a>
+          <a href="../about/about.html#about-social">社會議題</a>
+          <a href="../about/about.html#about-timeline">發展時間線</a>
+          <a href="../about/about.html#about-roadmap">未來規劃</a>
+        </div>
+      </div>
+      <a href="../index.html#feature-intro">功能介紹</a>
+      <a href="../index.html#contact-us">聯繫我們</a>
+      <div class="nav-item has-submenu">
+        <a href="faq.html">常見問題</a>
+        <button class="submenu-toggle" type="button" aria-label="展開常見問題子選單" aria-expanded="false">▾</button>
+        <div class="submenu">
+          <a href="faq-emotion-trend.html">情緒趨勢圖</a>
+          <a href="faq-diary.html">日記功能</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="faq-page">
+    <section class="faq-wrap">
+      <header class="faq-hero">
+        <p class="faq-kicker">FAQ / 日記功能</p>
+        <h2>日記功能 QA</h2>
+        <p>整理日記功能的常見疑問，包含隱私安全、資料同步、撰寫規則與 AI 回饋機制。</p>
+      </header>
+
+      <section class="faq-section" aria-label="隱私與資料安全">
+        <h3>隱私與資料安全</h3>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h4>Q1：日記內容會被別人看到嗎？</h4>
+            <p>A：不會。日記內容會以加密形式儲存，避免以明文被讀取。只有你本人可以在登入後查看與編輯內容。</p>
+          </article>
+
+          <article class="faq-item">
+            <h4>Q2：為什麼生活總覽頁看不到日記內容？</h4>
+            <p>A：為了保護隱私，生活總覽頁不顯示日記原文，也避免顯示加密後的亂碼。該頁僅顯示「是否有日記」狀態，如需查看內容，請進入日記頁。</p>
+          </article>
+
+          <article class="faq-item">
+            <h4>Q3：為什麼會出現解密失敗？</h4>
+            <p>A：可能原因包括：</p>
+            <ol>
+              <li>裝置金鑰狀態異常</li>
+              <li>資料同步未完成</li>
+              <li>還原流程中斷</li>
+            </ol>
+            <p>系統會優先保護原始資料、不進行覆寫。建議：</p>
+            <ol>
+              <li>確認帳號登入狀態</li>
+              <li>重新同步資料</li>
+              <li>必要時重新登入</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-label="儲存與同步">
+        <h3>儲存與同步</h3>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h4>Q4：按下儲存後，資料存到哪裡？</h4>
+            <p>A：資料會先儲存在本地裝置，並在網路可用時同步至雲端。即使在離線狀態，也會優先確保內容被安全保存。</p>
+          </article>
+
+          <article class="faq-item">
+            <h4>Q7：換手機後日記還在嗎？</h4>
+            <p>A：只要你的帳號已完成雲端同步，登入同一帳號即可取回資料。建議平時保持登入並定期連網同步。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-label="日記撰寫規則">
+        <h3>日記撰寫規則</h3>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h4>Q8：日記一定要寫很多字嗎？</h4>
+            <p>A：不需要。即使是一句簡單的紀錄，例如「今天最在意的是......」，也具有觀察價值。</p>
+          </article>
+
+          <article class="faq-item">
+            <h4>Q9：可以只寫標題、不寫內文嗎？</h4>
+            <p>A：可以。只要有有效文字（例如標題或重點），系統就會判定為當天有日記。</p>
+          </article>
+
+          <article class="faq-item">
+            <h4>Q10：日記可以刪除嗎？</h4>
+            <p>A：可以。你可以刪除指定日期的日記，但刪除後通常無法復原，請在操作前確認。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-label="回饋機制 AI 分析">
+        <h3>回饋機制（AI 分析）</h3>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h4>Q11：沒有寫日記，為什麼不能產生回饋？</h4>
+            <p>A：回饋功能需要一定的文字內容作為分析基礎。若當天沒有日記，系統會停用按鈕或提示先完成紀錄，以避免產生無意義內容。</p>
+          </article>
+
+          <article class="faq-item">
+            <h4>Q12：回饋內容每天都會一樣嗎？</h4>
+            <p>A：不會。回饋會根據當天的資料組合動態生成，包括情緒、睡眠、症狀、生理期、日記內容，因此每天的回饋可能不同。</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>copyright © 2026 心域 Innera All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      const navbar = document.querySelector(".navbar");
+      const navToggle = document.querySelector(".nav-toggle");
+      const primaryNav = document.getElementById("primary-nav");
+      const submenuItems = primaryNav ? Array.from(primaryNav.querySelectorAll(".has-submenu")) : [];
+
+      function closeMobileNav() {
+        if (!navbar || !navToggle) {
+          return;
+        }
+
+        navbar.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+
+        submenuItems.forEach((item) => {
+          item.classList.remove("submenu-open");
+          const toggle = item.querySelector(".submenu-toggle");
+          if (toggle) {
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      if (!navbar || !navToggle || !primaryNav) {
+        return;
+      }
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = navbar.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      primaryNav.querySelectorAll("a").forEach((anchor) => {
+        anchor.addEventListener("click", () => {
+          if (window.matchMedia("(max-width: 768px)").matches) {
+            closeMobileNav();
+          }
+        });
+      });
+
+      submenuItems.forEach((item) => {
+        const toggle = item.querySelector(".submenu-toggle");
+        if (!toggle) {
+          return;
+        }
+
+        toggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          const isSubmenuOpen = item.classList.toggle("submenu-open");
+          toggle.setAttribute("aria-expanded", String(isSubmenuOpen));
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          closeMobileNav();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
