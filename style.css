@@ -202,6 +202,13 @@ h6 {
   z-index: 2;
 }
 
+.hero-app-logo {
+  width: clamp(84px, 12vw, 128px);
+  height: auto;
+  display: block;
+  margin: 0 0 10px;
+}
+
 .hero-left h2 {
   margin: 0;
   font-size: 76px;
