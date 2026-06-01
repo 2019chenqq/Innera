@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iansui&family=Inter:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap");
+
+:root {
+  --font-handwriting: "Iansui", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  --font-latin: "Inter", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
 
 * {
   box-sizing: border-box;
@@ -10,7 +15,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  font-family: var(--font-handwriting);
   background: #f4fbff;
   color: #2f3e46;
   line-height: 1.8;
@@ -22,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: var(--font-handwriting);
 }
 
 /* 導覽列 */
@@ -74,6 +79,7 @@ h6 {
 }
 
 .brand-title span {
+  font-family: var(--font-latin);
   font-size: 15px;
   color: #0b143f;
 }
@@ -454,6 +460,12 @@ footer .copyright-symbol {
     gap: 10px;
   }
 
+  .navbar.is-open {
+    max-height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
   .nav-toggle {
     display: inline-flex;
     flex-direction: column;
@@ -476,10 +488,13 @@ footer .copyright-symbol {
   .navbar nav {
     display: none;
     width: 100%;
+    max-height: calc(100dvh - 96px);
+    overflow-y: auto;
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
     padding: 10px 0 2px;
+    overscroll-behavior: contain;
   }
 
   .navbar.is-open nav {

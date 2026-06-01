@@ -297,6 +297,7 @@ footer {
 .guide-section {
   padding: 90px 8%;
   text-align: center;
+  scroll-margin-top: 180px;
 }
 
 .guide-section h2 {
@@ -359,6 +360,31 @@ footer {
   }
 
   .guide-menu {
-    top: 120px;
+    top: 88px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    box-shadow: 0 8px 18px rgba(80, 160, 180, 0.1);
+  }
+
+  .guide-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .guide-menu a {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    font-size: 15px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .guide-section {
+    scroll-margin-top: 150px;
   }
 }

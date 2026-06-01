@@ -3,9 +3,9 @@
 .faq-page,
 .faq-page h2,
 .faq-page h3,
-.faq-page p,
-.faq-page li {
-  font-family: "Inter", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  .faq-page p,
+  .faq-page li {
+  font-family: var(--font-handwriting);
 }
 
 .faq-page {

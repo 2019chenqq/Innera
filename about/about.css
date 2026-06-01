@@ -59,7 +59,7 @@
 .about-page .about-hero h2 {
   margin: 0;
   max-width: 11ch;
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: var(--font-handwriting);
   font-size: clamp(28px, 3.8vw, 44px);
   font-weight: 800;
   line-height: 1.15;
