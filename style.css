@@ -407,16 +407,13 @@ blockquote {
 .feature-group img {
   width: 100 px;
   margin: 0;
-  padding: 16px;
-  background: white;
-  border-radius: 28px;
-  box-shadow: 0 18px 45px rgba(80, 160, 180, 0.16);
+  border-radius: 15px;
   transition: 0.35s;
 }
 
 .feature-group img:hover {
   transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 28px 70px rgba(80, 160, 180, 0.22);
+  box-shadow: 0 20px 50px rgba(80, 160, 180, 0.18);
 }
 
 .feature-grid img:nth-child(4) {
@@ -947,8 +944,7 @@ footer .copyright-symbol {
   max-width: 80%;
   margin: 0 auto;
   display: block;
-  border-radius: 28px;
-  box-shadow: 0 18px 45px rgba(80, 160, 180, 0.16);
+  border-radius: 15px;
 }
 
 /* ===== 趨勢圖影片（重點） ===== */
@@ -970,6 +966,7 @@ footer .copyright-symbol {
 .feature-grid img:hover {
   transform: translateY(-8px);
   transition: 0.3s;
+  box-shadow: 0 20px 50px rgba(80, 160, 180, 0.18);
 }
 /* ===== 功能展示圖修正版：避免截圖爆大 ===== */
 
@@ -1010,10 +1007,7 @@ footer .copyright-symbol {
   height: clamp(280px, 32vw, 400px) !important;
   max-width: none !important;
   object-fit: contain;
-  border-radius: 32px;
-  padding: 10px;
-  background: white;
-  box-shadow: 0 20px 50px rgba(80, 160, 180, 0.18);
+  border-radius: 15px;
 }
 
 /* 單張圖：例如日記、藥物整合 */
@@ -1022,10 +1016,16 @@ footer .copyright-symbol {
   height: clamp(320px, 36vw, 460px) !important;
   max-width: 90% !important;
   object-fit: contain;
-  border-radius: 32px;
-  padding: 10px;
-  background: white;
-  box-shadow: 0 20px 50px rgba(80, 160, 180, 0.18);
+  border-radius: 15px;
+}
+
+/* 日記兩張圖片：grid 雙欄置中 */
+#diary .feature-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: start;
+  gap: 60px;
 }
 
 /* 趨勢圖橫幅：適合截圖 */
@@ -1102,6 +1102,7 @@ footer .copyright-symbol {
 .video-banner:hover {
   transform: translateY(-8px);
   transition: 0.3s;
+  box-shadow: 0 20px 50px rgba(80, 160, 180, 0.18);
 }
 
 /* 手機版 */
@@ -1134,6 +1135,12 @@ footer .copyright-symbol {
     max-height: none;
     border-radius: 18px;
   }
+
+  /* 日記手機版換成單欄 */
+  #diary .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 /* ===== 媒體尺寸統一（圖片 + 影片） ===== */
@@ -1165,9 +1172,16 @@ footer .copyright-symbol {
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  border-radius: var(--media-card-radius);
-  background: #ffffff;
-  box-shadow: 0 20px 50px rgba(80, 160, 180, 0.18);
+  border-radius: 15px;
+}
+
+/* 日記兩張圖片靠攏（統一尺寸版本） */
+#diary .feature-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: start;
+  gap: 60px;
 }
 
 .video-banner {
