@@ -232,14 +232,10 @@
     <form
       class="cooperation-form"
       id="cooperation-form"
-      action="https://formsubmit.co/innera0120@gmail.com"
-      method="POST"
+      data-gas-endpoint="https://script.google.com/macros/s/AKfycbx-kPAR4WFQH0qhZzEtWNZQgBQnubCXQd3EEME1kneHcDWcqZbXhfkZAo_zljnquCu4/exec"
     >
       <h3>合作洽詢表單</h3>
       <p class="form-help">送出後會直接寄到 Innera 團隊信箱，我們會盡快與您聯繫。</p>
-      <input type="hidden" name="_subject" value="Innera 官網合作洽詢">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://2019chenqq.github.io/Innera/?sent=1#contact-us">
       <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off">
       <div class="form-grid">
       <label>
@@ -462,19 +458,60 @@
 
     if (cooperationForm && formNote) {
       const submitButton = cooperationForm.querySelector(".submit-btn");
+      const gasEndpoint = cooperationForm.dataset.gasEndpoint || "";
 
       if (new URLSearchParams(window.location.search).get("sent") === "1") {
         formNote.className = "form-note success";
         formNote.textContent = "感謝您的來信，我們已收到合作需求，將於 1-3 個工作天內與您聯繫。";
       }
 
-      cooperationForm.addEventListener("submit", () => {
+      cooperationForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!gasEndpoint || gasEndpoint === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL") {
+          formNote.className = "form-note error";
+          formNote.textContent = "請先把 Google Apps Script Web App URL 填進 `data-gas-endpoint`。";
+          return;
+        }
+
+        const formData = new FormData(cooperationForm);
+        const payload = Object.fromEntries(formData.entries());
+
         formNote.className = "form-note";
-        formNote.textContent = "送出中，請依畫面完成驗證或信箱啟用。";
+        formNote.textContent = "送出中，請稍候...";
 
         if (submitButton) {
           submitButton.disabled = true;
           submitButton.textContent = "送出中...";
+        }
+
+        try {
+          const response = await fetch(gasEndpoint, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          const result = await response.json();
+
+          if (!response.ok || !result.ok) {
+            throw new Error(result.error || "提交失敗");
+          }
+
+          formNote.className = "form-note success";
+          formNote.textContent = "感謝您的來信，我們已收到合作需求，將於 1-3 個工作天內與您聯繫。";
+          cooperationForm.reset();
+        } catch (error) {
+          formNote.className = "form-note error";
+          formNote.textContent = "送出失敗，請稍後再試，或直接寄信到 innera0120@gmail.com。";
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "送出合作需求";
+          }
         }
       });
     }
