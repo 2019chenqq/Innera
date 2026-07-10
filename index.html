@@ -234,7 +234,6 @@
       id="cooperation-form"
       action="https://script.google.com/macros/s/AKfycbxjGiUS_Z7xdY26IX8Y-Te5BvOou68kZX2_MgLHoHG_a7LFwwVOJLFWKOO8exfbeoc/exec"
       method="POST"
-      target="gas-submit-frame"
     >
       <h3>合作洽詢表單</h3>
       <p class="form-help">送出後會直接寄到 Innera 團隊信箱，我們會盡快與您聯繫。</p>
@@ -265,7 +264,6 @@
       <button type="submit" class="submit-btn">送出合作需求</button>
       <p class="form-note" id="form-note" aria-live="polite"></p>
     </form>
-    <iframe class="form-submit-frame" name="gas-submit-frame" title="聯繫表單送出狀態"></iframe>
 </section>
 
 <footer>
@@ -461,7 +459,6 @@
 
     if (cooperationForm && formNote) {
       const submitButton = cooperationForm.querySelector(".submit-btn");
-      const submitFrame = document.querySelector('iframe[name="gas-submit-frame"]');
 
       if (new URLSearchParams(window.location.search).get("sent") === "1") {
         formNote.className = "form-note success";
@@ -477,15 +474,6 @@
           submitButton.textContent = "送出中...";
         }
       });
-
-      if (submitFrame) {
-        submitFrame.addEventListener("load", () => {
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = "送出合作需求";
-          }
-        });
-      }
     }
   })();
 </script>
