@@ -459,19 +459,42 @@
 
     if (cooperationForm && formNote) {
       const submitButton = cooperationForm.querySelector(".submit-btn");
+      const submitAction = cooperationForm.getAttribute("action") || "";
 
       if (new URLSearchParams(window.location.search).get("sent") === "1") {
         formNote.className = "form-note success";
         formNote.textContent = "感謝您的來信，我們已收到合作需求，將於 1-3 個工作天內與您聯繫。";
       }
 
-      cooperationForm.addEventListener("submit", () => {
+      cooperationForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
         formNote.className = "form-note";
         formNote.textContent = "送出中，請稍候...";
 
         if (submitButton) {
           submitButton.disabled = true;
           submitButton.textContent = "送出中...";
+        }
+
+        try {
+          await fetch(submitAction, {
+            method: "POST",
+            mode: "no-cors",
+            body: new FormData(cooperationForm),
+          });
+
+          cooperationForm.reset();
+          formNote.className = "form-note success";
+          formNote.textContent = "感謝您的來信，我們已收到合作需求，將於 1-3 個工作天內與您聯繫。";
+        } catch (error) {
+          formNote.className = "form-note error";
+          formNote.textContent = "送出失敗，請稍後再試，或直接寄信到 innera0120@gmail.com。";
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "送出合作需求";
+          }
         }
       });
     }
