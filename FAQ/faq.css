@@ -157,3 +157,73 @@
     font-size: 17px;
   }
 }
+
+/* Privacy FAQ sections */
+.privacy-page .faq-hero p,
+.privacy-page .faq-item p,
+.privacy-help p {
+  line-height: 1.85;
+}
+
+.privacy-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.privacy-topics a {
+  padding: 8px 16px;
+  border: 1px solid rgba(120, 180, 210, 0.35);
+  border-radius: 999px;
+  background: #fff;
+  color: #14344d;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.privacy-topics a:hover {
+  background: #e4f4fc;
+}
+
+.privacy-page a:focus-visible {
+  outline: 3px solid #4e7a93;
+  outline-offset: 4px;
+}
+
+.privacy-page .faq-section {
+  scroll-margin-top: 120px;
+}
+
+.privacy-help {
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid rgba(120, 180, 210, 0.35);
+  border-radius: 16px;
+  background: #eaf6fc;
+  color: #27465c;
+}
+
+.privacy-help p {
+  margin: 0 0 12px;
+}
+
+.privacy-help a {
+  color: #14344d;
+  text-underline-offset: 4px;
+}
+
+.privacy-back {
+  display: inline-block;
+  padding-block: 6px;
+}
+
+@media (max-width: 768px) {
+  .privacy-page .faq-section {
+    scroll-margin-top: 104px;
+  }
+
+  .privacy-help {
+    padding: 16px;
+    border-radius: 14px;
+  }
+}

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日記功能 QA | 心域 Innera</title>
-  <meta name="description" content="日記功能 QA（網站版）：隱私安全、儲存同步、撰寫規則與 AI 回饋機制常見問題。">
+  <title>加密與隱私 QA | 心域 Innera</title>
+  <meta name="description" content="加密與隱私 QA：了解日記與健康紀錄的加密保護、AI 資料處理、換機金鑰恢復與資料刪除。">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="faq.css">
 </head>
@@ -57,94 +57,78 @@
     </nav>
   </header>
 
-  <main class="faq-page">
+  <main class="faq-page privacy-page">
     <section class="faq-wrap">
       <header class="faq-hero">
-        <p class="faq-kicker">FAQ / 日記功能</p>
-        <h2>日記功能 QA</h2>
-        <p>整理日記功能的常見疑問，包含隱私安全、資料同步、撰寫規則與 AI 回饋機制。</p>
+        <p class="faq-kicker">FAQ / 加密與隱私</p>
+        <h2>加密與隱私 QA</h2>
+        <p>了解你的紀錄如何受到保護，以及 AI 回饋、換機與資料刪除時需要知道的事。</p>
       </header>
 
-      <section class="faq-section" aria-label="隱私與資料安全">
-        <h3>隱私與資料安全</h3>
+      <nav class="privacy-topics" aria-label="本頁問題分類">
+        <a href="#data-protection">資料加密</a>
+        <a href="#key-recovery">換機與金鑰</a>
+        <a href="#data-privacy">資料使用與刪除</a>
+      </nav>
+
+      <section class="faq-section" id="data-protection" aria-labelledby="protection-title">
+        <h3 id="protection-title">資料如何受到保護</h3>
         <div class="faq-list">
           <article class="faq-item">
-            <h4>Q1：日記內容會被別人看到嗎？</h4>
-            <p>A：日記內容會以加密形式儲存，查看時需透過 App 使用對應金鑰解密。若使用 AI 回饋功能，系統會處理產生回饋所需的日記與相關紀錄，實際處理範圍請參閱功能說明與隱私政策。</p>
+            <h4>Q1：心域如何保護我的日記與健康紀錄？</h4>
+            <p>A：心域針對日記及健康紀錄提供加密保護，將受保護的內容轉換為密文後再同步至雲端。查看時，App 會使用對應金鑰解密，讓你閱讀自己的紀錄。</p>
           </article>
-
           <article class="faq-item">
-            <h4>Q2：為什麼生活總覽頁看不到日記內容？</h4>
-            <p>A：為了保護隱私，生活總覽頁不顯示日記原文，也避免顯示加密後的亂碼。該頁僅顯示「是否有日記」狀態，如需查看內容，請進入日記頁。</p>
+            <h4>Q2：什麼是加密？資料上雲端後會直接顯示原文嗎？</h4>
+            <p>A：你可以把加密想成替資料上鎖：受保護的內容在雲端以密文保存，需要正確的金鑰才能還原。部分維持同步與查詢所需的資訊，例如紀錄日期與更新時間，仍會保留供系統運作。</p>
           </article>
-<!--
           <article class="faq-item">
-            <h4>Q3：為什麼會出現解密失敗？</h4>
-            <p>A：可能原因包括：</p>
-            <ol>
-              <li>裝置金鑰狀態異常</li>
-              <li>資料同步未完成</li>
-              <li>還原流程中斷</li>
-            </ol>
-            <p>系統會優先保護原始資料、不進行覆寫。建議：</p>
-            <ol>
-              <li>確認帳號登入狀態</li>
-              <li>重新同步資料</li>
-              <li>必要時重新登入</li>
-            </ol>
-          </article> -->
-        </div>
-      </section>
-
-      <section class="faq-section" aria-label="儲存與同步">
-        <h3>儲存與同步</h3>
-        <div class="faq-list">
-          <article class="faq-item">
-            <h4>Q1：儲存後，資料存到哪裡？</h4>
-            <p>A：資料會先儲存在本地裝置，並在網路可用時同步至雲端。即使在離線狀態，也會優先確保內容被安全保存。</p>
+            <h4>Q3：心域使用什麼加密方式？</h4>
+            <p>A：心域的資料加密機制採用 AES-GCM，除了保護內容，也能在解密時檢查加密資料是否遭到竄改。加密金鑰由 App 的安全儲存機制保存，供讀取受保護的紀錄使用。</p>
           </article>
-
           <article class="faq-item">
-            <h4>Q2：換手機後日記還在嗎？</h4>
-            <p>A：已完成雲端同步的日記，可以在換機後登入同一帳號取回；要正常閱讀加密內容，還需要完成金鑰恢復。換機或重新安裝前，請先確認同步完成，並妥善保存備援金鑰。若無法恢復對應金鑰，可能無法讀取原本的加密紀錄。</p>
+            <h4>Q4：使用 AI 回饋時，AI 會讀取我的紀錄嗎？</h4>
+            <p>A：AI 回饋需要處理相關紀錄，才能產生回應。依使用的功能，分析內容可能包含日記、情緒、睡眠等資料。資料以加密形式保存，並不代表 AI 分析時完全不會接觸內容；實際處理範圍請參閱 App 內的功能說明與隱私政策。</p>
           </article>
         </div>
       </section>
 
-      <section class="faq-section" aria-label="日記撰寫規則">
-        <h3>日記撰寫規則</h3>
+      <section class="faq-section" id="key-recovery" aria-labelledby="recovery-title">
+        <h3 id="recovery-title">換機與金鑰恢復</h3>
         <div class="faq-list">
           <article class="faq-item">
-            <h4>Q1：日記一定要寫很多字嗎？</h4>
-            <p>A：不需要。即使是一句簡單的紀錄，例如「今天最在意的是......」，也具有觀察價值。</p>
+            <h4>Q5：換手機或重新安裝後，還能讀取原本的資料嗎？</h4>
+            <p>A：取回加密紀錄需要完成雲端同步，也需要恢復對應的加密金鑰。換機或重新安裝前，請確認同步狀態，並妥善保存 App 提供的備援金鑰；僅登入同一帳號，不一定就能解密所有舊紀錄。</p>
           </article>
-
           <article class="faq-item">
-            <h4>Q2：可以只寫標題、不寫內文嗎？</h4>
-            <p>A：可以。只要有有效文字（例如標題或重點），系統就會判定為當天有日記。</p>
+            <h4>Q6：為什麼登入帳號後，還需要恢復金鑰？</h4>
+            <p>A：帳號登入用來確認你的身分，加密金鑰則用來解開受保護的內容。換機或重新安裝後，新裝置可能尚未持有原本的金鑰，因此需要依 App 指示完成恢復，才能閱讀既有紀錄。</p>
           </article>
-
           <article class="faq-item">
-            <h4>Q3：日記可以刪除嗎？</h4>
-            <p>A：可以。你可以刪除指定日期的日記，但刪除後通常無法復原，請在操作前確認。</p>
+            <h4>Q7：備援金鑰是什麼？可以提供給客服嗎？</h4>
+            <p>A：備援金鑰是協助你恢復加密資料的重要憑證，請放在只有自己能取得的安全位置，避免分享給他人或放入客服訊息。若原裝置無法使用，又缺少有效的金鑰恢復方式，部分加密紀錄可能無法取回。</p>
           </article>
         </div>
       </section>
 
-      <section class="faq-section" aria-label="回饋機制 AI 分析">
-        <h3>回饋機制（AI 分析）</h3>
+      <section class="faq-section" id="data-privacy" aria-labelledby="privacy-title">
+        <h3 id="privacy-title">資料使用與刪除</h3>
         <div class="faq-list">
           <article class="faq-item">
-            <h4>Q1：沒有寫日記，為什麼不能產生回饋？</h4>
-            <p>A：回饋功能需要一定的文字內容作為分析基礎。若當天沒有日記，系統會停用按鈕或提示先完成紀錄，以避免產生無意義內容。</p>
+            <h4>Q8：心域會販售我的個人資料，或用來投放廣告嗎？</h4>
+            <p>A：依目前隱私政策，心域不會販售你的個人資料，也不會在未經你同意的情況下，將可識別個人身分的資料用於廣告行銷。提供雲端同步等功能時，必要資料會由受託服務供應商處理。</p>
           </article>
-
           <article class="faq-item">
-            <h4>Q2：回饋內容每天都會一樣嗎？</h4>
-            <p>A：不會。回饋會根據當天的資料組合動態生成，包括情緒、睡眠、症狀、生理期、日記內容，因此每天的回饋可能不同。</p>
+            <h4>Q9：我可以刪除自己的資料嗎？</h4>
+            <p>A：可以。你可以使用 App 已提供的刪除功能，或透過隱私政策中的聯絡窗口提出申請。刪除作業與備份淘汰需要處理時間，因此不代表所有備份會立即清除；實際保存期限請參閱 App 內的隱私政策。</p>
           </article>
         </div>
       </section>
+
+      <aside class="privacy-help" aria-label="更多協助">
+        <p>還有其他隱私或資料問題？歡迎<a href="../index.html#contact-us">聯繫我們</a>。來信時請勿附上密碼或備援金鑰。</p>
+        <a class="privacy-back" href="faq.html">返回常見問題分類</a>
+      </aside>
     </section>
   </main>
 

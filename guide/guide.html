@@ -3,12 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>App 使用指南 | 心域 Innera</title>
-  <meta name="description" content="心域 App 使用指南，整理快速開始、日常紀錄、趨勢分析、日記書寫、藥物管理與常見問題。">
+  <meta
+    name="description"
+    content="心域 App 使用指南：從日常紀錄、趨勢分析、用藥管理到回診整理，快速了解心域如何把零碎的身心狀態整理成可回顧的脈絡。"
+  >
+
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="guide.css">
 </head>
+
 <body class="guide-page">
+
+  <!-- =========================
+       Navbar
+  ========================== -->
   <header class="navbar">
     <a class="logo-area" href="../index.html" aria-label="回到首頁">
       <img src="../favicon.png" class="logo" alt="心域 Logo">
@@ -20,7 +30,13 @@
       </div>
     </a>
 
-    <button class="nav-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="primary-nav">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="開啟導覽選單"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -28,9 +44,18 @@
 
     <nav id="primary-nav">
       <a href="../index.html">首頁</a>
+
       <div class="nav-item has-submenu">
         <a href="../about/about.html">關於我們</a>
-        <button class="submenu-toggle" type="button" aria-label="展開關於我們子選單" aria-expanded="false">▾</button>
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-label="展開關於我們子選單"
+          aria-expanded="false"
+        >
+          ▾
+        </button>
+
         <div class="submenu">
           <a href="../about/about.html#about-motivation">開發動機</a>
           <a href="../about/about.html#about-expectation">我們期許</a>
@@ -39,242 +64,944 @@
           <a href="../about/about.html#about-roadmap">未來規劃</a>
         </div>
       </div>
-      <a href="../index.html#feature-intro">功能介紹</a>
+
       <div class="nav-item has-submenu">
-        <a href="daily-record.html" aria-current="page">App 使用指南</a>
-        <button class="submenu-toggle" type="button" aria-label="展開 App 使用指南子選單" aria-expanded="false">▾</button>
+        <a href="guide.html" aria-current="page">App 導覽</a>
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-label="展開 App 使用指南子選單"
+          aria-expanded="false"
+        >
+          ▾
+        </button>
+
         <div class="submenu">
-          <a href="daily-record.html" aria-current="page">每日紀錄</a>
+          <a href="guide.html#quick-start">快速開始</a>
+          <a href="guide.html#daily-record">日常紀錄</a>
+          <a href="guide.html#trend">看懂趨勢</a>
+          <a href="guide.html#medicine">用藥管理</a>
+          <a href="guide.html#summary">帶進回診</a>
         </div>
       </div>
+
       <a href="../index.html#contact-us">聯繫我們</a>
+
       <div class="nav-item has-submenu">
         <a href="../FAQ/faq.html">常見問題</a>
-        <button class="submenu-toggle" type="button" aria-label="展開常見問題子選單" aria-expanded="false">▾</button>
+        <button
+          class="submenu-toggle"
+          type="button"
+          aria-label="展開常見問題子選單"
+          aria-expanded="false"
+        >
+          ▾
+        </button>
+
         <div class="submenu">
           <a href="../FAQ/faq-emotion-trend.html">情緒趨勢圖</a>
           <a href="../FAQ/faq-diary.html">日記功能</a>
           <a href="../FAQ/faq-medication.html">藥物紀錄</a>
+          <a href="../FAQ/faq-privacy.html">加密與隱私</a>
         </div>
       </div>
     </nav>
   </header>
 
+
   <main>
+
+    <!-- =========================
+         Hero
+    ========================== -->
     <section class="guide-hero">
-      <span>USER GUIDE</span>
-      <h1>心域 App 使用指南</h1>
-      <p>從日常紀錄、趨勢分析到藥物管理，陪你一步步熟悉心域的使用方式。</p>
+      <div class="guide-hero-inner">
+        <span class="guide-eyebrow">USER GUIDE</span>
+
+        <h1>
+          從記錄，
+          <br>
+          到看懂自己的變化。
+        </h1>
+
+        <p>
+          用幾分鐘熟悉心域的核心流程：
+          留下日常、看見趨勢、整理用藥，再把重要變化帶進回診。
+        </p>
+
+        <div class="guide-hero-actions">
+          <a href="#quick-start" class="guide-primary-btn">
+            開始使用
+          </a>
+
+          <a href="#daily-record" class="guide-secondary-btn">
+            看怎麼記錄
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section class="guide-menu">
+
+    <!-- =========================
+         Sticky Guide Menu
+    ========================== -->
+    <nav class="guide-menu" aria-label="App 使用指南章節">
       <a href="#quick-start">快速開始</a>
       <a href="#daily-record">日常紀錄</a>
-      <a href="#trend">趨勢分析</a>
-      <a href="#diary">日記書寫</a>
-      <a href="#medicine">藥物管理</a>
-      <a href="#future">未來規劃</a>
-    </section>
+      <a href="#trend">看懂趨勢</a>
+      <a href="#medicine">用藥管理</a>
+      <a href="#summary">帶進回診</a>
+    </nav>
 
+
+    <!-- =========================
+         Quick Start
+    ========================== -->
     <section class="guide-section" id="quick-start">
-      <h2>快速開始</h2>
-      <div class="guide-steps">
-        <div class="guide-step">
-          <span class="step-number">01</span>
-          <h3>建立每日紀錄</h3>
-          <p>進入紀錄頁，選擇今天的情緒、症狀與睡眠狀態，先留下最基礎的身心資訊。</p>
-        </div>
-        <div class="guide-step">
-          <span class="step-number">02</span>
-          <h3>查看趨勢</h3>
-          <p>透過趨勢圖觀察近期變化，找出影響情緒、睡眠或症狀的可能脈絡。</p>
-        </div>
-        <div class="guide-step">
-          <span class="step-number">03</span>
-          <h3>管理藥物</h3>
-          <p>新增目前用藥、記錄回診調藥與每日服藥狀態，完整保留治療歷程。</p>
-        </div>
+      <div class="section-heading">
+        <span class="section-kicker">ONE APP, ONE FLOW</span>
+        <h2>心域怎麼使用？</h2>
+        <p>
+          心域不是要求你每天完成一份完整表單，
+          而是讓不同時間留下的片段，慢慢累積成可以回顧的脈絡。
+        </p>
       </div>
+
+      <div class="flow-grid">
+
+  <!-- 01 記錄 -->
+  <article class="flow-item">
+    <span class="flow-number">01</span>
+
+    <div class="flow-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 20h4l10.5-10.5a2.8 2.8 0 0 0-4-4L4 16v4Z"></path>
+        <path d="M13.5 6.5l4 4"></path>
+      </svg>
+    </div>
+
+    <h3>記錄</h3>
+
+    <p>
+      留下情緒、症狀、睡眠、事件與日常狀態。
+    </p>
+  </article>
+
+  <div class="flow-arrow" aria-hidden="true">→</div>
+
+
+  <!-- 02 整理 -->
+  <article class="flow-item">
+    <span class="flow-number">02</span>
+
+    <div class="flow-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 7h16"></path>
+        <path d="M4 12h16"></path>
+        <path d="M4 17h16"></path>
+
+        <circle cx="8" cy="7" r="1.5"></circle>
+        <circle cx="15" cy="12" r="1.5"></circle>
+        <circle cx="10" cy="17" r="1.5"></circle>
+      </svg>
+    </div>
+
+    <h3>整理</h3>
+
+    <p>
+      把零碎資訊放回同一段時間脈絡裡。
+    </p>
+  </article>
+
+  <div class="flow-arrow" aria-hidden="true">→</div>
+
+
+  <!-- 03 看見 -->
+  <article class="flow-item">
+    <span class="flow-number">03</span>
+
+    <div class="flow-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 17l5-5 4 3 7-8"></path>
+        <path d="M15 7h5v5"></path>
+      </svg>
+    </div>
+
+    <h3>看見</h3>
+
+    <p>
+      從單次感受，逐步看見近期變化與長期趨勢。
+    </p>
+  </article>
+
+  <div class="flow-arrow" aria-hidden="true">→</div>
+
+
+  <!-- 04 回診 -->
+  <article class="flow-item">
+    <span class="flow-number">04</span>
+
+    <div class="flow-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M8 4h8"></path>
+        <path d="M9 3h6v3H9z"></path>
+
+        <rect
+          x="5"
+          y="5"
+          width="14"
+          height="16"
+          rx="2"
+        ></rect>
+
+        <path d="M8 11h8"></path>
+        <path d="M8 15h8"></path>
+        <path d="M8 19h5"></path>
+      </svg>
+    </div>
+
+    <h3>回診</h3>
+
+    <p>
+      把重要變化整理後，帶進下一次回診或諮詢。
+    </p>
+  </article>
+
+</div>
     </section>
 
-    <section class="guide-section" id="daily-record">
-      <h2>日常紀錄</h2>
-      <p>日常紀錄包含情緒、症狀與睡眠，是心域最核心的功能。你可以每天簡單勾選，也可以補上文字備註，讓後續回顧更完整。</p>
-      <div class="guide-section-grid">
-        <div class="guide-panel">
-          <h3>情緒</h3>
-          <p>選擇當天最貼近的情緒狀態，幫助你看見波動與變化。</p>
-          <video class="guide-panel-video" controls preload="metadata">
-            <source src="../Video/mood.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-          </video>
-        </div>
-        <div class="guide-panel">
-          <h3>症狀</h3>
-          <p>勾選身體或心理上的不適，例如疲倦、焦慮、頭痛、心悸等。</p>
-          <video class="guide-panel-video" controls preload="metadata">
-            <source src="../Video/symptoms.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-          </video>
-        </div>
-        <div class="guide-panel">
-          <h3>睡眠</h3>
-          <p>記錄入睡、醒來、睡眠品質與中斷情況，方便搭配趨勢分析回看。</p>
-          <video class="guide-panel-video" controls preload="metadata">
-            <source src="../Video/sleep record.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-          </video>
-        </div>
-      </div>
-      <p class="guide-note">建議先養成每天 30 秒的紀錄習慣，比一次記很多更容易維持。</p>
-    </section>
 
+    <!-- =========================
+         Daily Record
+    ========================== -->
+    <!-- =========================
+     Daily Record
+========================== -->
+<section class="guide-section section-soft" id="daily-record">
+
+  <!-- 上半部：App 畫面 + 說明 -->
+  <div class="feature-layout">
+
+    <!-- 左：App mockup -->
+    <div class="feature-visual">
+
+      <div class="app-mockup">
+
+        <div class="app-mockup-top">
+
+          <div>
+            <span>DAILY RECORD</span>
+            <strong>今天想留下什麼？</strong>
+          </div>
+
+          <small>14:32</small>
+
+        </div>
+
+
+        <!-- 四個快速紀錄 -->
+        <div class="app-record-grid">
+
+          <!-- 情緒 -->
+          <div class="record-option">
+
+            <span class="record-option-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M9 10h.01"></path>
+                <path d="M15 10h.01"></path>
+                <path d="M9 14c1 1 2 1.5 3 1.5s2-.5 3-1.5"></path>
+              </svg>
+            </span>
+
+            <strong>情緒</strong>
+
+          </div>
+
+
+          <!-- 症狀 -->
+          <div class="record-option">
+
+            <span class="record-option-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M12 8v8"></path>
+                <path d="M8 12h8"></path>
+              </svg>
+            </span>
+
+            <strong>症狀</strong>
+
+          </div>
+
+
+          <!-- 睡眠 -->
+          <div class="record-option">
+
+            <span class="record-option-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M18 16.5A7.5 7.5 0 0 1 8.2 6.7 7.5 7.5 0 1 0 18 16.5Z"></path>
+              </svg>
+            </span>
+
+            <strong>睡眠</strong>
+
+          </div>
+
+
+          <!-- 事件 -->
+          <div class="record-option">
+
+            <span class="record-option-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="4" y="5" width="16" height="15" rx="2"></rect>
+                <path d="M8 3v4"></path>
+                <path d="M16 3v4"></path>
+                <path d="M4 9h16"></path>
+                <path d="M8 13h3"></path>
+                <path d="M8 16h6"></path>
+              </svg>
+            </span>
+
+            <strong>事件</strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- Daily Check-in -->
+        <div class="app-checkin">
+
+          <span>DAILY CHECK-IN</span>
+
+
+          <div class="checkin-row">
+
+            <p>能量</p>
+
+            <div class="checkin-scale">
+              <i></i>
+              <i></i>
+              <i class="active"></i>
+              <i></i>
+              <i></i>
+            </div>
+
+          </div>
+
+
+          <div class="checkin-row">
+
+            <p>食慾</p>
+
+            <div class="checkin-scale">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i class="active"></i>
+              <i></i>
+            </div>
+
+          </div>
+
+
+          <div class="checkin-row">
+
+            <p>活動量</p>
+
+            <div class="checkin-scale">
+              <i></i>
+              <i class="active"></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 右：文字說明 -->
+    <div class="feature-copy">
+
+      <span class="section-kicker">
+        01 · DAILY RECORD
+      </span>
+
+      <h2>
+        約 30 秒，
+        <br>
+        留下今天的狀態。
+      </h2>
+
+      <p class="feature-lead">
+        不需要一次把所有欄位填完。
+        依照當下最有感的變化，
+        留下真正發生的事就好。
+      </p>
+
+
+      <div class="feature-list">
+
+        <article>
+
+          <span>01</span>
+
+          <div>
+            <h3>情緒、症狀、睡眠分開記</h3>
+            <p>
+              讓不同類型的狀態可以各自追蹤，
+              不被塞進同一個分數裡。
+            </p>
+          </div>
+
+        </article>
+
+
+        <article>
+
+          <span>02</span>
+
+          <div>
+            <h3>同一天可以記很多次</h3>
+            <p>
+              狀態會隨時間改變，
+              不需要一天只留下一個答案。
+            </p>
+          </div>
+
+        </article>
+
+
+        <article>
+
+          <span>03</span>
+
+          <div>
+            <h3>Daily Check-in 補上生活狀態</h3>
+            <p>
+              簡單記錄整體情緒與今日身心狀態。
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <div class="record-tags">
+        <span>情緒</span>
+        <span>症狀</span>
+        <span>睡眠</span>
+        <span>能量</span>
+        <span>活動量</span>
+        <span>食慾</span>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- ↑ feature-layout 到這裡一定要關掉 -->
+
+
+  <!-- =========================
+       AI Record
+       注意：一定要放在 feature-layout 外面
+  ========================== -->
+  <div class="ai-panel">
+
+    <!-- 左 -->
+    <div class="ai-copy">
+
+      <span class="section-kicker section-kicker-light">
+        AI RECORD
+      </span>
+
+      <h3>
+        不知道怎麼分類？
+        <br>
+        也可以先用自己的話說。
+      </h3>
+
+      <p>
+        當你只知道「今天很不舒服」，
+        卻不知道該填在哪裡，
+        可以先輸入自然語言，
+        再由系統協助整理成較清楚的紀錄。
+      </p>
+
+
+      <div class="ai-note">
+
+        <strong>
+          AI 協助整理，不取代專業診斷。
+        </strong>
+
+        <span>
+          目的是降低輸入負擔，
+          幫助日常資訊更容易被整理與回顧。
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- 右 -->
+    <div class="ai-demo">
+
+      <div class="user-message">
+        昨天回診換藥後，
+        今天一直很想睡，
+        下午又有點焦躁。
+      </div>
+
+
+      <div class="ai-arrow">
+        ↓
+      </div>
+
+
+      <div class="ai-result">
+
+        <span class="ai-result-label">
+          整理後
+        </span>
+
+
+        <div>
+          <small>症狀</small>
+          <strong>嗜睡</strong>
+        </div>
+
+
+        <div>
+          <small>狀態變化</small>
+          <strong>下午焦躁</strong>
+        </div>
+
+
+        <div>
+          <small>醫療事件</small>
+          <strong>昨日回診</strong>
+        </div>
+
+
+        <div>
+          <small>用藥事件</small>
+          <strong>昨日調藥</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- =========================
+         Trends
+    ========================== -->
     <section class="guide-section" id="trend">
-      <h2>趨勢分析</h2>
-      <p>趨勢圖會把你累積的紀錄整理成視覺化變化，幫助你理解近期狀態是否穩定，以及哪些因素可能正在影響你。</p>
-      <div class="guide-section-grid">
-        <div class="guide-panel">
-          <h3>看波動</h3>
-          <p>觀察情緒或症狀是否在某幾天集中變化，找出壓力高峰。</p>
+      <div class="section-heading">
+        <span class="section-kicker">02 · TRENDS</span>
+        <h2>紀錄累積後，你會看到什麼？</h2>
+        <p>
+          單一天的感覺很容易受到當下影響。
+          把資料放回時間軸，才比較容易理解「最近跟以前有什麼不同」。
+        </p>
+      </div>
+
+      <div class="trend-layout">
+        <div class="trend-card">
+          <div class="trend-card-top">
+            <div>
+              <span>MOOD TREND</span>
+              <strong>近期狀態變化</strong>
+            </div>
+
+            <small>7 DAYS</small>
+          </div>
+
+          <div class="trend-chart">
+            <span class="grid-line grid-1"></span>
+            <span class="grid-line grid-2"></span>
+            <span class="grid-line grid-3"></span>
+
+            <svg
+              viewBox="0 0 800 260"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="trendArea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#72c8d8" stop-opacity=".30" />
+                  <stop offset="100%" stop-color="#72c8d8" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+
+              <path
+                class="trend-area"
+                d="M0,190 C70,180 110,120 175,132 S290,215 355,170 S460,78 535,108 S650,190 800,74 L800,260 L0,260 Z"
+              />
+
+              <path
+                class="trend-line"
+                d="M0,190 C70,180 110,120 175,132 S290,215 355,170 S460,78 535,108 S650,190 800,74"
+              />
+            </svg>
+
+            <div class="trend-days">
+              <span>9/1</span>
+              <span>9/2</span>
+              <span>9/3</span>
+              <span>9/4</span>
+              <span>9/5</span>
+              <span>9/6</span>
+              <span>9/7</span>
+            </div>
+          </div>
         </div>
-        <div class="guide-panel">
-          <h3>看關聯</h3>
-          <p>把睡眠、情緒與症狀放在一起看，更容易理解事件之間的連動。</p>
+
+
+        <div class="trend-points">
+
+  <!-- 看變化 -->
+  <article>
+    <span class="trend-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 4v16"></path>
+        <path d="M17 4v16"></path>
+        <path d="M7 7l-2-2-2 2"></path>
+        <path d="M17 17l2 2 2-2"></path>
+      </svg>
+    </span>
+
+    <div>
+      <h3>看變化</h3>
+      <p>
+        觀察情緒、症狀或睡眠是否在某段時間出現明顯波動。
+      </p>
+    </div>
+  </article>
+
+
+  <!-- 看時間脈絡 -->
+  <article>
+    <span class="trend-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <circle cx="6" cy="12" r="2"></circle>
+        <circle cx="12" cy="7" r="2"></circle>
+        <circle cx="18" cy="15" r="2"></circle>
+        <path d="M8 11l2.5-2.5"></path>
+        <path d="M13.5 8.5l2.5 5"></path>
+      </svg>
+    </span>
+
+    <div>
+      <h3>看時間脈絡</h3>
+      <p>
+        把事件、用藥與狀態放回同一段時間理解。
+      </p>
+    </div>
+  </article>
+
+
+  <!-- 看長期趨勢 -->
+  <article>
+    <span class="trend-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 17l5-5 4 3 7-8"></path>
+        <path d="M15 7h5v5"></path>
+      </svg>
+    </span>
+
+    <div>
+      <h3>看長期趨勢</h3>
+      <p>
+        從單次感受逐步累積成可以追蹤、比較的紀錄。
+      </p>
+    </div>
+  </article>
+
+</div>
+    </section>
+
+
+    <!-- =========================
+         Medication
+    ========================== -->
+    <section class="guide-section section-soft" id="medicine">
+      <div class="feature-layout feature-layout-reverse">
+
+        <div class="feature-copy">
+          <span class="section-kicker">03 · MEDICATION</span>
+
+          <h2>
+            不只記得
+            <br>
+          「現在吃什麼」
+          </h2>
+
+          <p class="feature-lead">
+            心域保留藥物新增、每日服藥與回診調整歷程，
+            讓用藥變化可以和症狀、睡眠與生活事件一起被回顧。
+          </p>
+
+          <div class="medicine-points">
+            <div>
+              <span>01</span>
+              <strong>新增目前用藥</strong>
+            </div>
+
+            <div>
+              <span>02</span>
+              <strong>留下每日服藥狀態</strong>
+            </div>
+
+            <div>
+              <span>03</span>
+              <strong>記錄調藥與停藥</strong>
+            </div>
+
+            <div>
+              <span>04</span>
+              <strong>回顧調整前後變化</strong>
+            </div>
+          </div>
         </div>
-        <div class="guide-panel">
-          <h3>看長期</h3>
-          <p>拉長區間後，能更清楚辨認週期性變化與復原進展。</p>
+
+
+        <div class="feature-visual">
+          <div class="medicine-timeline-card">
+            <div class="medicine-card-top">
+              <span>MEDICATION HISTORY</span>
+              <strong>用藥歷程</strong>
+            </div>
+
+            <div class="medicine-timeline">
+              <div class="medicine-step">
+                <i></i>
+                <div>
+                  <span>START</span>
+                  <strong>開始服藥</strong>
+                  <p>建立目前使用中的藥物。</p>
+                </div>
+              </div>
+
+              <div class="medicine-step">
+                <i></i>
+                <div>
+                  <span>DAILY</span>
+                  <strong>每日服藥</strong>
+                  <p>留下實際服藥狀態。</p>
+                </div>
+              </div>
+
+              <div class="medicine-step">
+                <i></i>
+                <div>
+                  <span>CHANGE</span>
+                  <strong>記錄變化</strong>
+                  <p>同步留下症狀與生活狀態。</p>
+                </div>
+              </div>
+
+              <div class="medicine-step">
+                <i></i>
+                <div>
+                  <span>VISIT</span>
+                  <strong>回診調整</strong>
+                  <p>更新劑量、停藥或新增藥物。</p>
+                </div>
+              </div>
+
+              <div class="medicine-step">
+                <i></i>
+                <div>
+                  <span>REVIEW</span>
+                  <strong>保留歷程</strong>
+                  <p>之後仍可回頭查看過去紀錄。</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="guide-trend-video-wrap">
-          <video class="guide-panel-video" controls preload="metadata" playsinline>
-            <source src="../Video/trend.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-          </video>
-        </div>
+
       </div>
     </section>
 
-    <section class="guide-section" id="diary">
-      <h2>日記書寫</h2>
-      <p>日記是把感受說清楚的地方，適合記下事件、想法、身體反應或回診後的觀察。文字越完整，後續回顧越有幫助。</p>
-      <div class="guide-section-grid">
-        <div class="guide-panel">
-          <h3>記下發生了什麼</h3>
-          <p>簡單寫出今天遇到的事情、情緒來源或讓你在意的片段。</p>
+
+    <!-- =========================
+         Visit Summary
+    ========================== -->
+    <section class="guide-section summary-section" id="summary">
+      <div class="summary-layout">
+
+        <div class="summary-copy">
+          <span class="section-kicker">04 · VISIT SUMMARY</span>
+
+          <h2>
+            記錄的目的，
+            <br>
+            不只是留下資料。
+          </h2>
+
+          <p>
+            當日常紀錄逐漸累積，心域會把近期的重要資訊整理起來，
+            幫助你在回診前先掌握這段時間發生了什麼，
+            減少只靠當下記憶回想的負擔。
+          </p>
+
+          <div class="summary-flow">
+            <span>日常紀錄</span>
+            <i>→</i>
+            <span>趨勢整理</span>
+            <i>→</i>
+            <span>回診摘要</span>
+            <i>→</i>
+            <span>溝通</span>
+          </div>
         </div>
-        <div class="guide-panel">
-          <h3>補上身體感受</h3>
-          <p>如果有胸悶、失眠、疲憊或其他不舒服，也可以一起記錄。</p>
+
+
+        <div class="summary-card">
+          <div class="summary-card-top">
+            <div>
+              <span>VISIT SUMMARY</span>
+              <strong>最近 14 天</strong>
+            </div>
+
+            <small>PREVIEW</small>
+          </div>
+
+          <div class="summary-stats">
+            <div>
+              <span>睡眠</span>
+              <strong>6h 42m</strong>
+              <small>平均睡眠</small>
+            </div>
+
+            <div>
+              <span>紀錄</span>
+              <strong>11 天</strong>
+              <small>有留下資料</small>
+            </div>
+          </div>
+
+          <div class="summary-highlights">
+            <span>近期值得注意</span>
+
+            <div>
+              <i></i>
+              <p>睡眠品質近期有較明顯波動。</p>
+            </div>
+
+            <div>
+              <i></i>
+              <p>疲倦與低能量在數個時間點共同出現。</p>
+            </div>
+
+            <div>
+              <i></i>
+              <p>本期間有一次用藥調整紀錄。</p>
+            </div>
+
+            <div>
+              <i></i>
+              <p>近期有重要生活事件被記錄。</p>
+            </div>
+          </div>
         </div>
-        <div class="guide-panel">
-          <h3>留下回診素材</h3>
-          <p>可把想問醫師的內容先寫下，回診時就不容易忘記。</p>
-        </div>
-        <div class="guide-diary-video-wrap">
-          <video class="guide-panel-video" controls preload="metadata" playsinline>
-            <source src="../Video/diary.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-          </video>
-        </div>
+
       </div>
     </section>
 
-    <section class="guide-section" id="medicine">
-      <h2>藥物管理</h2>
-      <p>藥物管理會整理你的用藥清單、每日打卡與調藥紀錄，讓你和醫師都能快速回看治療歷程。</p>
-      <div class="guide-section-grid">
-        <div class="guide-panel">
-          <h3>新增藥物</h3>
-          <p>把目前正在服用的藥物建檔，方便之後追蹤。</p>
-          <video class="guide-panel-video" controls preload="metadata" playsinline>
-            <source src="../Video/med_add.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-          </video>
-        </div>
-        <div class="guide-panel">
-          <h3>回診調藥</h3>
-          <p>每次回診後更新劑量或停藥資訊，保留完整的用藥脈絡。</p>
-          <video class="guide-panel-video" controls preload="metadata" playsinline>
-            <source src="../Video/med_adjustment.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-          </video>
-        </div>
-        <div class="guide-panel">
-          <h3>症狀交叉比對</h3>
-          <p>對比用藥前後的症狀變化，幫助評估藥物效果與副作用。</p>
-          <video class="guide-panel-video" controls preload="metadata" playsinline>
-            <source src="../Video/med_compare.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-          </video>
-        </div>
+
+    <!-- =========================
+         Closing
+    ========================== -->
+    <section class="guide-closing">
+      <div>
+        <span>A BETTER WAY TO RECORD</span>
+        <h2>不必記得完美，只要記得真實。</h2>
+        <p>
+          有變化時留下來，累積一段時間後再回頭看。
+          這就是心域希望幫你做到的事。
+        </p>
       </div>
-      <div class="guide-symptom-compare-wrap">
-        <div class="guide-panel">
-          <h3>每日打卡</h3>
-          <p>記錄有沒有按時服藥，協助了解遵從率與漏服情況。</p>
-          <video class="guide-panel-video" controls preload="metadata" playsinline>
-            <source src="../Video/藥物打卡.mp4" type="video/mp4">
-            您的瀏覽器不支援影片播放。
-        </div>
-      </div>
+
+      <a href="../FAQ/faq.html">
+        查看常見問題
+        <span aria-hidden="true">→</span>
+      </a>
     </section>
 
-    <section class="guide-section" id="future">
-      <span class="coming-soon">COMING SOON</span>
-      <h2>未來開發功能</h2>
-      <p>以下功能仍在規劃與開發中，尚未全部開放使用。</p>
-      <ul class="guide-list coming-soon-list">
-        <li>
-          <strong>更多自動化洞察</strong>
-          <span>之後會持續優化趨勢提示，幫助你更快看懂每天的變化。</span>
-        </li>
-        <li>
-          <strong>更多照護入口</strong>
-          <span>包含更多資源、資訊整理與可能的求助路徑。</span>
-        </li>
-        <li>
-          <strong>更完整的紀錄整合</strong>
-          <span>持續把情緒、睡眠、症狀與用藥串成更完整的照護脈絡。</span>
-        </li>
-      </ul>
-    </section>
   </main>
+
 
   <footer>
     <p>copyright © 2026 心域 Innera All rights reserved.</p>
   </footer>
 
+
+  <!-- =========================
+       Navbar Script
+  ========================== -->
   <script>
     (function () {
       const navbar = document.querySelector(".navbar");
       const navToggle = document.querySelector(".nav-toggle");
       const primaryNav = document.getElementById("primary-nav");
-      const submenuItems = primaryNav ? Array.from(primaryNav.querySelectorAll(".has-submenu")) : [];
+      const submenuItems = primaryNav
+        ? Array.from(primaryNav.querySelectorAll(".has-submenu"))
+        : [];
 
       function closeMobileNav() {
-        if (!navbar || !navToggle) {
-          return;
-        }
+        if (!navbar || !navToggle) return;
 
         navbar.classList.remove("is-open");
         navToggle.setAttribute("aria-expanded", "false");
 
         submenuItems.forEach((item) => {
           item.classList.remove("submenu-open");
+
           const toggle = item.querySelector(".submenu-toggle");
+
           if (toggle) {
             toggle.setAttribute("aria-expanded", "false");
           }
         });
       }
 
-      if (!navbar || !navToggle || !primaryNav) {
-        return;
-      }
+      if (!navbar || !navToggle || !primaryNav) return;
 
       navToggle.addEventListener("click", () => {
         const isOpen = navbar.classList.toggle("is-open");
         navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      submenuItems.forEach((item) => {
+        const toggle = item.querySelector(".submenu-toggle");
+
+        if (!toggle) return;
+
+        toggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const isOpen = item.classList.toggle("submenu-open");
+
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
       });
 
       primaryNav.querySelectorAll("a").forEach((anchor) => {
@@ -285,19 +1012,6 @@
         });
       });
 
-      submenuItems.forEach((item) => {
-        const toggle = item.querySelector(".submenu-toggle");
-        if (!toggle) {
-          return;
-        }
-
-        toggle.addEventListener("click", (event) => {
-          event.preventDefault();
-          const isSubmenuOpen = item.classList.toggle("submenu-open");
-          toggle.setAttribute("aria-expanded", String(isSubmenuOpen));
-        });
-      });
-
       window.addEventListener("resize", () => {
         if (!window.matchMedia("(max-width: 768px)").matches) {
           closeMobileNav();
@@ -305,5 +1019,49 @@
       });
     })();
   </script>
+
+
+  <!-- =========================
+       Active Guide Menu
+  ========================== -->
+  <script>
+    (function () {
+      const menuLinks = Array.from(document.querySelectorAll(".guide-menu a"));
+
+      const sections = menuLinks
+        .map((link) => ({
+          link,
+          target: document.querySelector(link.getAttribute("href"))
+        }))
+        .filter((item) => item.target);
+
+      function updateActiveSection() {
+        let current = null;
+
+        sections.forEach((item) => {
+          const rect = item.target.getBoundingClientRect();
+
+          if (rect.top <= 220) {
+            current = item;
+          }
+        });
+
+        menuLinks.forEach((link) => {
+          link.classList.remove("is-active");
+        });
+
+        if (current) {
+          current.link.classList.add("is-active");
+        }
+      }
+
+      window.addEventListener("scroll", updateActiveSection, {
+        passive: true
+      });
+
+      updateActiveSection();
+    })();
+  </script>
+
 </body>
 </html>
