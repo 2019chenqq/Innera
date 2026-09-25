@@ -549,18 +549,37 @@ p {
   border-radius: var(--radius-lg);
   background: #f7f9fd;
   border: 1px solid var(--line);
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease;
 }
 
 .story-card-highlight {
   background: var(--navy);
   color: #fff;
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(16,23,46,.16);
+
+  /* 不再預設浮起 */
+  transform: none;
+  box-shadow: none;
+}
+
+/* 滑到哪張，哪張浮起 */
+.story-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(111, 143, 200, .28);
+  box-shadow: 0 24px 55px rgba(34, 52, 82, .12);
+}
+
+/* 深色 02 可以給稍微明顯一點的陰影 */
+.story-card-highlight:hover {
+  box-shadow: 0 30px 80px rgba(16, 23, 46, .18);
 }
 
 .story-number {
   font-family: var(--font-latin);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   color: var(--brand-strong);
 }
@@ -571,7 +590,7 @@ p {
 
 .story-kicker {
   margin: 34px 0 8px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--muted);
 }
@@ -583,7 +602,7 @@ p {
 .story-card > p:last-child {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .story-card.story-card-highlight > p:last-child {
@@ -594,12 +613,6 @@ p {
   margin: 0 0 16px;
   font-size: 22px;
   line-height: 1.45;
-}
-
-.story-card > p:last-child {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 14px;
 }
 
 .flow-arrow {
@@ -868,16 +881,30 @@ p {
   border-radius: 28px;
   background: #f7f9fd;
   border: 1px solid var(--line);
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease;
 }
 
 .capability-card-featured {
   background: linear-gradient(150deg, #e7eefb, #f6f8fc);
+
+  /* 取消固定浮起 */
+  transform: none;
+}
+
+/* 滑到哪張，哪張浮起 */
+.capability-card:hover {
   transform: translateY(-12px);
+  border-color: rgba(111, 143, 200, .28);
+  box-shadow: 0 24px 55px rgba(34, 52, 82, .12);
 }
 
 .capability-index {
   font-family: var(--font-latin);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   color: var(--brand-strong);
 }
@@ -914,7 +941,7 @@ p {
   border-radius: 999px;
   background: #fff;
   border: 1px solid var(--line);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
 }
 
