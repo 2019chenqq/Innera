@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Innera Clinician｜心域醫療端</title>
+  <meta
+    name="description"
+    content="Innera Clinician 將使用者授權的日常身心紀錄整理成期間變化、近期事件、睡眠與用藥脈絡，協助醫療人員在門診中更快掌握值得討論的資訊。"
+  >
+
+  <!-- 共用官網樣式 -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- 醫療端專屬樣式 -->
+  <link rel="stylesheet" href="clinician.css">
+
+  <link rel="icon" type="image/png" sizes="1200x1200" href="../favicon.png">
+</head>
+
+<body>
+
+<!-- =========================
+     NAV
+========================= -->
+<header class="navbar">
+  <a class="logo-area" href="../index.html" aria-label="回到首頁">
+    <img src="../favicon.png" class="logo" alt="心域 Innera">
+    <div class="brand-text">
+      <div class="brand-title">
+        <h1>心域</h1>
+        <span>INNERA</span>
+      </div>
+    </div>
+  </a>
+
+  <button
+    class="nav-toggle"
+    type="button"
+    aria-label="開啟導覽選單"
+    aria-expanded="false"
+    aria-controls="primary-nav"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="primary-nav">
+    <a href="../index.html">首頁</a>
+
+    <div class="nav-item has-submenu">
+      <a href="../about/about.html">關於我們</a>
+
+      <button
+        class="submenu-toggle"
+        type="button"
+        aria-label="展開關於我們子選單"
+        aria-expanded="false"
+      >
+        ▾
+      </button>
+
+      <div class="submenu">
+        <a href="../about/about.html#about-motivation">開發動機</a>
+        <a href="../about/about.html#about-expectation">我們期許</a>
+        <a href="../about/about.html#about-social">社會議題</a>
+        <a href="../about/about.html#about-timeline">發展時間線</a>
+        <a href="../about/about.html#about-roadmap">未來規劃</a>
+      </div>
+    </div>
+
+    <div class="nav-item has-submenu">
+      <a href="../guide/guide.html">App 導覽</a>
+
+      <button
+        class="submenu-toggle"
+        type="button"
+        aria-label="展開 App 導覽子選單"
+        aria-expanded="false"
+      >
+        ▾
+      </button>
+
+      <div class="submenu">
+        <a href="../guide/guide.html#quick-start">快速開始</a>
+        <a href="../guide/guide.html#daily-record">日常紀錄</a>
+        <a href="../guide/guide.html#trend">看懂趨勢</a>
+        <a href="../guide/guide.html#medicine">用藥管理</a>
+        <a href="../guide/guide.html#summary">帶進回診</a>
+      </div>
+    </div>
+
+    <a href="clinician.html" aria-current="page">醫療端</a>
+
+    <a href="../index.html#contact-us">聯繫我們</a>
+
+    <div class="nav-item has-submenu">
+      <a href="../FAQ/faq.html">常見問題</a>
+
+      <button
+        class="submenu-toggle"
+        type="button"
+        aria-label="展開常見問題子選單"
+        aria-expanded="false"
+      >
+        ▾
+      </button>
+
+      <div class="submenu">
+        <a href="../FAQ/faq-emotion-trend.html">情緒趨勢圖</a>
+        <a href="../FAQ/faq-diary.html">日記功能</a>
+        <a href="../FAQ/faq-medication.html">藥物紀錄</a>
+        <a href="../FAQ/faq-privacy.html">加密與隱私</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+
+  <!-- =========================
+       HERO
+  ========================= -->
+  <section class="clinical-hero">
+
+    <div class="clinical-glow clinical-glow-one" aria-hidden="true"></div>
+    <div class="clinical-glow clinical-glow-two" aria-hidden="true"></div>
+
+    <div class="clinical-hero-inner">
+
+      <div class="clinical-hero-copy">
+
+        <div class="clinical-eyebrow">
+          INNERA · CLINICAL CONNECTION
+        </div>
+
+        <h2>
+          讓兩次回診之間的變化，
+          <span>在診間被看見。</span>
+        </h2>
+
+        <p class="clinical-hero-desc">
+          Innera Clinician 將使用者授權的日常紀錄，
+          整理成期間變化、近期事件、睡眠與用藥脈絡，
+          協助醫療人員在有限的門診時間裡，
+          更快掌握值得進一步討論的資訊。
+        </p>
+
+        <div class="clinical-actions">
+          <a href="#clinical-system" class="primary-cta">
+            看看系統如何運作
+          </a>
+
+          <a href="../index.html#contact-us" class="secondary-cta">
+            合作洽詢
+          </a>
+        </div>
+
+        <div class="clinical-note">
+          <span></span>
+          官網展示內容皆為虛構 Demo 個案資料
+        </div>
+
+      </div>
+
+
+      <div class="clinical-hero-visual">
+
+        <div class="clinical-browser">
+
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
+            <span>Innera Clinician</span>
+          </div>
+
+          <img
+            src="../images/clinician/clinic-dashboard.png"
+            alt="Innera Clinician 今日門診 Demo 畫面"
+          >
+
+        </div>
+
+        <div class="clinical-floating-card">
+          <small>TODAY'S CLINIC</small>
+          <strong>從今日門診開始</strong>
+          <span>快速掌握已連結個案的近期狀態</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <a href="#connection" class="clinical-scroll">
+      EXPLORE
+      <i></i>
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       CONNECTION
+  ========================= -->
+  <section class="connection-section" id="connection">
+
+    <div class="section-inner">
+
+      <div class="connection-heading">
+        <div class="section-label">FROM DAILY LIFE TO CLINIC</div>
+
+        <h2 class="clinical-display-title">
+          從每天留下的紀錄，<br>
+          到下一次真正用得上的資訊。
+        </h2>
+
+        <p>
+          心域不是在回診前才開始整理。
+          日常中的情緒、症狀、睡眠與用藥變化，
+          會隨著持續記錄逐漸形成脈絡，
+          再由使用者授權帶進醫療端。
+        </p>
+      </div>
+
+
+      <div class="connection-flow">
+
+        <article class="connection-card">
+          <span class="connection-number">01</span>
+
+          <div class="connection-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                <rect x="9" y="3" width="6" height="4" rx="1"/>
+                <path d="M9 12h6M9 16h4"/>
+            </svg>
+            </div>
+
+          <p class="connection-en">RECORD</p>
+
+          <h3>日常留下紀錄</h3>
+
+          <p>
+            情緒、症狀、睡眠、用藥與生活事件，
+            在發生時逐步留下。
+          </p>
+
+          <div class="connection-tags">
+            <span>情緒</span>
+            <span>症狀</span>
+            <span>睡眠</span>
+            <span>用藥</span>
+          </div>
+        </article>
+
+
+        <div class="connection-arrow">→</div>
+
+
+        <article class="connection-card connection-card-main">
+          <span class="connection-number">02</span>
+
+          <div class="connection-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path d="M4 18V10"/>
+                <path d="M10 18V6"/>
+                <path d="M16 18v-5"/>
+                <path d="M22 18V3"/>
+                <path d="M3 21h19"/>
+            </svg>
+            </div>
+
+          <p class="connection-en">ORGANIZE</p>
+
+          <h3>整理成一段時間的脈絡</h3>
+
+          <p>
+            將分散紀錄整理為期間變化、
+            近期事件與可回顧的資訊。
+          </p>
+
+          <div class="connection-tags">
+            <span>期間變化</span>
+            <span>Timeline</span>
+            <span>AI 整理</span>
+          </div>
+        </article>
+
+
+        <div class="connection-arrow">→</div>
+
+
+        <article class="connection-card">
+          <span class="connection-number">03</span>
+
+          <div class="connection-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+                <path d="M8 3H6a2 2 0 0 0-2 2v16"/>
+                <path d="M16 3h2a2 2 0 0 1 2 2v16"/>
+                <path d="M9 3h6v5H9z"/>
+                <path d="M12 12v6"/>
+                <path d="M9 15h6"/>
+            </svg>
+            </div>
+          <p class="connection-en">CONNECT</p>
+
+          <h3>帶進下一次照護</h3>
+
+          <p>
+            讓醫療人員在門診中，
+            更快找到值得進一步詢問與討論的變化。
+          </p>
+
+          <div class="connection-tags">
+            <span>摘要</span>
+            <span>近期事件</span>
+            <span>用藥脈絡</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SYSTEM
+  ========================= -->
+  <section class="clinical-system-section" id="clinical-system">
+
+    <div class="section-inner">
+
+      <div class="system-heading">
+
+        <div>
+          <div class="section-label">INNERA CLINICIAN</div>
+
+          <h2 class="clinical-display-title">
+            不是更多資料，<br>
+            是更容易找到重點。
+          </h2>
+        </div>
+
+        <p>
+          從本診次個案，到一段時間內的變化與重要事件，
+          Innera Clinician 將不同紀錄放回時間脈絡中閱讀。
+        </p>
+
+      </div>
+
+
+      <!-- Feature 1 -->
+      <article class="system-feature">
+
+        <div class="system-copy">
+          <span class="system-index">01 / TODAY'S CLINIC</span>
+
+          <h3>先看到今天真正需要看的個案。</h3>
+
+          <p>
+            今日門診優先呈現本診次已連結心域的個案，
+            並顯示近期狀態、情緒、睡眠與值得注意的變化，
+            減少在不同資訊之間來回尋找。
+          </p>
+
+          <div class="system-points">
+            <span>本診次個案</span>
+            <span>近期狀態</span>
+            <span>睡眠</span>
+            <span>近期變化</span>
+          </div>
+        </div>
+
+
+        <div class="system-screen screen-dashboard">
+          <img
+            src="../images/clinician/clinic-dashboard.png"
+            alt="Innera Clinician 今日門診"
+            loading="lazy"
+          >
+        </div>
+
+      </article>
+
+
+      <!-- Feature 2 -->
+      <article class="system-feature system-feature-reverse">
+
+        <div class="system-copy">
+          <span class="system-index">02 / PERIOD CHANGE</span>
+
+          <h3>把一段時間的變化，整理成可以閱讀的脈絡。</h3>
+
+          <p>
+            系統依據有足夠資料支持的紀錄整理期間變化，
+            並將不同面向放在同一個畫面中，
+            協助快速理解這段時間發生了什麼。
+          </p>
+
+          <div class="system-points">
+            <span>期間變化</span>
+            <span>整體 Pattern</span>
+            <span>睡眠</span>
+            <span>目前用藥</span>
+          </div>
+
+          <p class="system-disclaimer">
+            AI 整理內容提供資訊整理與回顧，
+            不作為診斷或臨床判斷的替代。
+          </p>
+        </div>
+
+
+        <div class="system-screen screen-period">
+          <img
+            src="../images/clinician/clinic-change.png"
+            alt="Innera Clinician 期間變化與目前用藥"
+            loading="lazy"
+          >
+        </div>
+
+      </article>
+
+
+      <!-- Feature 3 -->
+      <article class="system-feature">
+
+        <div class="system-copy">
+          <span class="system-index">03 / TIMELINE</span>
+
+          <h3>重要的事情，不再散落在不同日期裡。</h3>
+
+          <p>
+            近期重要事件以時間軸呈現，
+            保留事件發生的先後關係，
+            讓情緒、睡眠與生活變化不只剩下一個平均值。
+          </p>
+
+          <div class="system-points">
+            <span>近期事件</span>
+            <span>時間脈絡</span>
+            <span>文字紀錄線索</span>
+          </div>
+        </div>
+
+
+        <div class="system-screen screen-timeline">
+          <img
+            src="../images/clinician/clinic-timeline.png"
+            alt="Innera Clinician 近期重要事件時間軸"
+            loading="lazy"
+          >
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       AI PRINCIPLE
+  ========================= -->
+  <section class="clinical-principle">
+
+    <div class="section-inner principle-grid">
+
+      <div class="principle-copy">
+        <div class="section-label light-label">
+          AI WITH BOUNDARIES
+        </div>
+
+        <h2>
+          整理資訊，<br>
+          而不是替代臨床判斷。
+        </h2>
+
+        <p>
+          心域希望 AI 做的是降低資訊整理成本，
+          而不是替醫療人員做出診斷。
+        </p>
+      </div>
+
+
+      <div class="principle-list">
+
+        <article>
+          <span>01</span>
+          <div>
+            <h3>有資料，才整理</h3>
+            <p>
+              期間變化以實際紀錄為基礎；
+              沒有足夠資料支持的面向，不為了填滿欄位而產生結論。
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>02</span>
+          <div>
+            <h3>區分紀錄與 AI 整理</h3>
+            <p>
+              若資訊來自日記或自然語言內容，
+              應與結構化紀錄區分，
+              避免被理解成客觀量測結果。
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>03</span>
+          <div>
+            <h3>把判斷留在診間</h3>
+            <p>
+              系統協助找到值得進一步了解的變化，
+              最終仍由醫療人員結合完整臨床資訊進行評估。
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SECURITY / MANAGEMENT
+  ========================= -->
+  <section class="clinical-security">
+
+    <div class="section-inner">
+
+      <div class="security-heading">
+        <div class="section-label">ACCESS & CLINIC MANAGEMENT</div>
+
+        <h2 class="clinical-display-title">
+          醫療資料，需要的不只是方便。
+        </h2>
+
+        <p>
+          從個案授權、角色權限到不同院所之間的資料隔離，
+          系統在資訊流動之外，也需要清楚定義誰能看到什麼。
+        </p>
+      </div>
+
+
+      <div class="security-grid">
+
+        <article class="security-card">
+          <span>01</span>
+          <h3>個案授權連結</h3>
+          <p>
+            使用者完成與院所的連結後，
+            才能依授權設定共享相關資訊。
+          </p>
+        </article>
+
+        <article class="security-card">
+          <span>02</span>
+          <h3>角色權限</h3>
+          <p>
+            臨床資訊依角色限制存取，
+            院所行政管理與個案臨床資料分開處理。
+          </p>
+        </article>
+
+        <article class="security-card">
+          <span>03</span>
+          <h3>院所資料隔離</h3>
+          <p>
+            不同院所的資料與成員權限分離，
+            停用帳號後即失去系統存取權。
+          </p>
+        </article>
+
+      </div>
+
+
+      <div class="management-showcase">
+
+        <div class="management-copy">
+          <span class="system-index">CLINIC MANAGEMENT</span>
+
+          <h3>從個案資訊到院所成員，各自有清楚的權限邊界。</h3>
+
+          <p>
+            院所管理功能負責成員與院所設定；
+            個案的臨床資訊則依醫療角色限制存取，
+            避免管理權限等同於臨床資料權限。
+          </p>
+        </div>
+
+
+        <div class="system-screen management-screen">
+          <img
+            src="../images/clinician/clinic-management.png"
+            alt="Innera Clinician 院所管理"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================= -->
+  <section class="clinical-cta">
+
+    <div class="section-inner">
+
+      <div class="clinical-cta-panel">
+
+        <div>
+          <div class="section-label light-label">
+            BUILDING THE CONNECTION
+          </div>
+
+          <h2>
+            讓更多日常裡發生的變化，<br>
+            在診間被真正看見。
+          </h2>
+
+          <p>
+            Innera Clinician 目前持續進行功能驗證與醫療端交流。
+            如果您對臨床應用、合作測試或產品導入有興趣，
+            歡迎與我們聯繫。
+          </p>
+        </div>
+
+        <a href="../index.html#contact-us" class="clinical-cta-button">
+          合作洽詢
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  © 2026 心域 Innera. All rights reserved.
+</footer>
+
+
+<script>
+  const navbar = document.querySelector(".navbar");
+  const navToggle = document.querySelector(".nav-toggle");
+
+  if (navbar && navToggle) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navbar.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  document.querySelectorAll(".submenu-toggle").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const item = button.closest(".has-submenu");
+      const isOpen = item.classList.toggle("submenu-open");
+
+      button.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+
+  document.querySelectorAll("#primary-nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navbar?.classList.remove("is-open");
+      navToggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+
+</body>
+</html>
