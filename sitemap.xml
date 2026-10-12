@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.google.com/schemas/sitemap/0.9">
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://2019chenqq.github.io/Innera/</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://innerahealthcare.com/</loc>
   </url>
 
-  </urlset>
+  <url>
+    <loc>https://innerahealthcare.com/about/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/guide/guide.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/clinician/clinician.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/FAQ/faq.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/FAQ/faq-emotion-trend.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/FAQ/faq-diary.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/FAQ/faq-medication.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/FAQ/faq-privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://innerahealthcare.com/terms.html</loc>
+  </url>
+
+</urlset>
